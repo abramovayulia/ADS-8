@@ -6,16 +6,16 @@ void Train::addCage(bool light) {
     Cage* item = new Cage;
     item->light = light;
     first = item;
-    tail = item;
+    last = item;
   } else {
     Cage* item = new Cage;
     item->light = light;
-    tail->next = item;
-    item->prev = tail;
-    tail = item;
+    last->next = item;
+    item->prev = last;
+    last = item;
   }
-  tail->next = first;
-  first->prev = tail;
+  last->next = first;
+  first->prev = last;
 }
 
 int Train::getLength() {
