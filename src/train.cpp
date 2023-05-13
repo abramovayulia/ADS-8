@@ -2,7 +2,7 @@
 #include "train.h"
 
 void Train::addCage(bool light) {
-  if (!head) {
+  if (!first) {
     Cage* item = new Cage;
     item->light = light;
     first = item;
